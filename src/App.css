@@ -1,0 +1,178 @@
+:root {
+  --primary: #2c3e50;
+  --secondary: #e67e22;
+  --accent: #2980b9;
+  --background: #ecf0f1;
+  --white: #ffffff;
+  --error: #e74c3c;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: var(--background);
+  font-family: 'Inter', sans-serif;
+}
+
+.app-title {
+  text-align: center;
+  color: var(--primary);
+  font-size: 2rem;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.app-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin: 0.5rem auto 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* === Base Button Style === */
+.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 2px solid;
+  transition: background 0.3s ease, border-color 0.2s ease, transform 0.1s ease;
+}
+.btn-copy:disabled {
+  background: #ccc;
+  color: #666;
+  border-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+/* === Template Buttons === */
+.toolbar-btn {
+  background: var(--secondary);
+  color: var(--white);
+  border-color: var(--secondary);
+}
+
+.toolbar-btn:hover {
+  border-color: transparent;
+}
+
+/* === Copy Button === */
+.btn-copy {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+  position: relative;
+}
+
+.btn-copy:hover {
+  border-color: transparent;
+}
+
+.btn-copy::after {
+  content: '📋';
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+}
+
+/* === Clear Button === */
+.btn-clear {
+  background: var(--white);
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-clear:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: transparent;
+}
+
+/* === Save Button === */
+.btn-save {
+  background: var(--accent);
+  color: var(--white);
+  border-color: var(--accent);
+}
+
+.btn-save:hover {
+  border-color: transparent;
+}
+
+/* === Clear History Button === */
+.btn-clear-history {
+  background: var(--error);
+  color: var(--white);
+  border-color: var(--error);
+}
+
+.btn-clear-history:hover {
+  border-color: transparent;
+}
+
+/* === Input Box === */
+.latex-input {
+  width: 100%;
+  min-height: 150px;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+
+.latex-input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* === Preview Box === */
+.preview-container {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  background: var(--white);
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* === Error Message === */
+.error-text {
+  color: var(--error);
+  font-style: italic;
+  position: relative;
+  padding-left: 1.8rem;
+}
+
+.error-text::before {
+  content: '⚠️';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.history-item {
+  display: block;
+  max-width: 120px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
